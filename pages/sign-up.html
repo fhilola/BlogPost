@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../style/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form id="signup-form">
+        <img src="../images/logo.svg" alt="">
+        <h2>Sign Up</h2>
+        <input type="text" id="firstname" placeholder="Firstname" autocomplete="off">
+        <input type="text" id="lastname" placeholder="Lastname" autocomplete="off">
+        <input type="email" id="email" placeholder="Email" autocomplete="off">
+        <div class="kozli-div">
+            <input type="password" id="password" placeholder="Password" autocomplete="off">
+            <button id="visibility-btn" class="fas fa-eye"></button>
+        </div>
+        <p>Already have an accaunt? <a href="">Login.</a></p>
+        <div>
+            <button id="sign-up">Sign Up</button>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../script/sign-up.js"></script>
+</body>
+</html>
