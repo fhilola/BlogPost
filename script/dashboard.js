@@ -129,3 +129,17 @@ $modalDeleteClose.addEventListener("click", ()=>{
 signOut.addEventListener("click", ()=>{
     location.replace(location.origin + '/index.html')
 })
+
+const editPostFormWrapper = document.querySelector(".edit-form-wrapper")
+const editPostForm = document.getElementById("edit-form")
+const editPostTitle = document.getElementById("post-title")
+const editPostSelect = document.getElementById("select")
+const editPostImage = document.getElementById("post-image")
+const editPostDescription = document.getElementById("post-description")
+
+$managePosts.addEventListener("click", (e)=>{
+    if(e.target.closest("#card__edit")){
+        editPostFormWrapper.classList.add("edit-form-wrapper-active")
+        editPostForm.classList.add("edit-form-active")
+    }
+})

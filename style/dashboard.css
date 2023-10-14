@@ -304,9 +304,9 @@ padding-bottom: 7px;
     flex-direction: column;
     transition: .3s;
     color: #000;
-font-family: Jomolhari;
-font-size: 30px;
-font-weight: 400;
+    font-family: Jomolhari;
+    font-size: 30px;
+    font-weight: 400;
 }
 .modal-delete-wrapper-active{
     opacity: 1;
@@ -348,4 +348,71 @@ font-weight: 400;
     font-family: Jomolhari;
     font-size: 20px;
     font-weight: 400;
+}
+.edit-form-wrapper{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000c8;
+    transition: .3s;
+    visibility: hidden;
+}
+#edit-form{
+    background-color: #F5C147;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.8);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 35px 60px;
+    max-width: 672px;
+    width: 100%;
+    gap: 33px 0;
+    /* visibility: hidden; */
+}
+#edit-form label{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+}
+#edit-form input, select{
+    width: 100%;
+    height: 47px;
+    color: #000;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+border-radius: 15px;
+background: #FFF;
+border: none;
+outline: none;
+text-indent: 10px;
+}
+#modal-edit-close{
+    /* position: absolute; */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: 4px solid #000;
+    border-radius: 50%;
+    color: #000;
+    width: 53px;
+    height: 53px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.edit-form-wrapper-active{
+    visibility: visible;
+}
+.edit-form-active{
+    visibility: visible;
 }
