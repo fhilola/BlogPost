@@ -15,7 +15,7 @@ const postDescription = document.getElementById("description")
 const signOut = document.getElementById("sign-out")
 const pEl = document.getElementById("check-deleting")
 const token = localStorage.getItem("access_token")
-console.log(pEl);
+// console.log(pEl);
 // console.log(token);
 
 $sidebarMenuItems.forEach(sidebarLink =>{
@@ -87,7 +87,7 @@ function renderNewPosts(result){
         <h3>${result.title.split(" ").length > 10 ? result.title.slice(0, 30) : result.title}</h3>
         <p>${result.description.split("").length > 10 ? result.description.slice(0, 80) : result.description}</p>
         <div class="card__button-wrapper">
-        <button id="card__edit">Edit</button>
+        <button id="card__edit" data-article-id="${result._id}">Edit</button>
         <button id="card__delete" data-article-id="${result._id}">Delete</button>
         </div>
         `
@@ -143,9 +143,12 @@ $managePosts.addEventListener("click", (e)=>{
     if(e.target.closest("#card__edit")){
         editPostFormWrapper.classList.add("edit-form-wrapper-active")
         editPostForm.classList.add("edit-form-active")
+        editPostButton.setAttribute("data-article-id", e.target.dataset.articleId)
     }
 })
 editPostButton.addEventListener("click", (e)=>{
+    e.preventDefault()
+    const editItemId = e.target.dataset.articleId
     var myHeaders = new Headers();
 myHeaders.append("Authorization", `Bearer ${token}` );
 myHeaders.append("Content-Type", "application/json");
@@ -164,7 +167,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://localhost:3000/api/posts", requestOptions)
+fetch(`http://localhost:3000/api/posts/${editItemId}`, requestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(result);
