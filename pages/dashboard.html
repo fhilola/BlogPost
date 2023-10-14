@@ -26,6 +26,26 @@
         <main>
             <div data-content-name="create" id="create-content" class="create-content">
                 <h2>Create New Post</h2>
+                <form id="create-post-form">
+                    <label for="title">
+                        Post title
+                        <input type="text" id="title">
+                    </label>
+                    <label for="image">
+                        Post image 
+                        <div>
+                            <input type="url" id="image">
+                        <select data-category-id="hello" id="categories"></select>
+                        </div>
+                    </label>
+                    <label for="description">
+                        Post description
+                        <textarea id="description"></textarea>
+                    </label>
+                    <div>
+                        <button type="submit" >Create Post</button>
+                    </div>
+                </form>
             </div>
             <div data-content-name="manage"  class="manage-posts">
                 <h2>Manage Posts</h2>

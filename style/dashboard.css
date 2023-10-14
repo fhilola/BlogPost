@@ -132,3 +132,69 @@ main h2{
     background-color: #fff;
     color: #000;
 }
+.create-content form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px 0;
+    margin-top: 37px;
+}
+.create-content form label{
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+}
+.create-content form label input{
+    width: 100%;
+    height: 44px;
+    border-radius: 15px;
+    background: #FFF;
+    outline: none;
+    text-indent: 10px;
+    color: #000;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+}
+.create-content form label > div{
+    display: flex;
+    gap: 0 28px;
+}
+.create-content form label > div select{
+    border-radius: 15px;
+    background: #FFF;
+    color: #000;
+font-family: Jomolhari;
+font-size: 18px;
+font-weight: 400;
+padding: 4px 10px;
+}
+textarea{
+    width: 100%;
+    height: 172px;
+    resize: none;
+    border-radius: 15px;
+    background: #FFF;
+    outline: none;
+    text-indent: 10px;
+    color: #000;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+}
+.create-content form button{
+    display: block;
+    margin: 0 auto;
+padding: 10px 70px;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+background: #F5C147;
+color: #000;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+}
