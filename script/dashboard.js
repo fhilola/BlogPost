@@ -82,7 +82,7 @@ function renderNewPosts(result){
         $managePosts.innerHTML = `
         <img src="${result.image}" alt="${result.description}""/>
         <h3>${result.title.split(" ").length > 10 ? result.title.slice(0, 30) : result.title}</h3>
-        <p>${result.description.split("").length > 10 ? result.description.slice(0, 50) : result.description}</p>
+        <p>${result.description.split("").length > 10 ? result.description.slice(0, 80) : result.description}</p>
         <div class="card__button-wrapper">
         <button id="card__edit">Edit</button>
         <button id="card__delete" data-realestate-id="${result._id}">Delete</button>
