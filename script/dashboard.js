@@ -12,7 +12,10 @@ const $createPostForm = document.getElementById("create-post-form")
 const postTitle = document.getElementById("title")
 const postImage = document.getElementById("image")
 const postDescription = document.getElementById("description")
+const signOut = document.getElementById("sign-out")
+const pEl = document.getElementById("check-deleting")
 const token = localStorage.getItem("access_token")
+console.log(pEl);
 // console.log(token);
 
 $sidebarMenuItems.forEach(sidebarLink =>{
@@ -72,7 +75,7 @@ axios.get("http://localhost:3000/api/posts")
     renderNewPosts(data)
 })
 function renderNewPosts(result){
-    console.log(result);
+    // console.log(result);
     const managePostFragment =document.createDocumentFragment()
     $managePosts.innerHTML = ""
         result.data.data.map(result =>{
@@ -85,10 +88,44 @@ function renderNewPosts(result){
         <p>${result.description.split("").length > 10 ? result.description.slice(0, 80) : result.description}</p>
         <div class="card__button-wrapper">
         <button id="card__edit">Edit</button>
-        <button id="card__delete" data-realestate-id="${result._id}">Delete</button>
+        <button id="card__delete" data-article-id="${result._id}">Delete</button>
         </div>
         `
         managePostFragment.appendChild($managePosts)
 })
 $managePosts.appendChild(managePostFragment)
 }
+$managePosts.addEventListener("click", (e)=>{
+    if(e.target.closest("#card__delete")){
+       $modelDeleteWrapper.classList.add("modal-delete-wrapper-active")
+       $modelDelete.classList.add("modal-delete-active")
+    //    console.log(e.target.dataset.articleId)
+       $modalDeleteBtn.setAttribute("data-article-id", e.target.dataset.articleId)
+    }
+})
+$modalDeleteBtn.addEventListener("click", (e)=>{
+    const deleteItemId = e.target.dataset.articleId
+    console.log(deleteItemId);
+    axios.delete(`http://localhost:3000/api/posts/${deleteItemId}`, 
+    {
+        headers: {
+            "Authorization" : 'Bearer ' + token
+        }
+    })
+    .then(result => {
+        console.log(result);
+        if(result.status === 204){
+            $modelDeleteWrapper.classList.remove("modal-delete-wrapper-active")
+            $modelDelete.classList.remove("modal-delete-active")
+        }else{
+            pEl.textContent = "You can delete only your article"
+        }
+    })
+})
+$modalDeleteClose.addEventListener("click", ()=>{
+    $modelDeleteWrapper.classList.remove("modal-delete-wrapper-active")
+    $modelDelete.classList.remove("modal-delete-active")
+})
+signOut.addEventListener("click", ()=>{
+    location.replace(location.origin + '/index.html')
+})

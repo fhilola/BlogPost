@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="dashboard-wrapper">
@@ -21,7 +22,7 @@
                 <li class="menu__item"><a href="./dashboard.html?page=create">Create Post</a></li>
                 <li class="menu__item"><a href="./dashboard.html?page=manage">Manage Posts</a></li>
             </ul>
-            <button class="sidebar__signout">Sign Out?</button>
+            <button class="sidebar__signout" id="sign-out">Sign Out?</button>
         </aside>
         <main>
             <div data-content-name="create" id="create-content" class="create-content">
@@ -50,13 +51,14 @@
             <div data-content-name="manage"  class="manage-posts">
                 <h2>Manage Posts</h2>
                 <div id="manage-posts" class="manage-posts-grid"></div>
-                <!-- <div class="modal-delete-wrapper">
+                <div class="modal-delete-wrapper">
                     <div class="modal-delete">
                     <button id="modal-delete-close" class="fas fa-times"></button>
-                    <p>Are you sure to delete this Real Estate?</p>
+                    <h3>Delete Post</h3>
+                    <p id="check-deleting">Are you sure to delete this Article?</p>
                     <button class="model-delete-btn">Delete</button>
                 </div>
-                </div> -->
+                </div>
             </div>
         </main>
     </div>
