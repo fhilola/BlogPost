@@ -6,6 +6,10 @@
 }
 body{
     background-color: #000000;
+    height: 100vh;
+}
+::-webkit-scrollbar{
+    display: none;
 }
 .dashboard-wrapper{
     display: flex;
@@ -197,4 +201,72 @@ color: #000;
 font-family: Jomolhari;
 font-size: 20px;
 font-weight: 400;
+}
+.manage-posts-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 93px;
+    margin-top: 40px;
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+    padding: 10px;
+}
+.manage-post-card-item{
+    min-width: 276px;
+    /* background-color: #fff; */
+    min-height: 336px;
+    max-height: 336px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px 0;
+    justify-content: space-between;
+    /* padding: 7px; */
+    box-shadow: 0px 0px 10px #c5c5c5;
+    border: 3px solid #F0DE36;
+    background: #1E1E1E;
+}
+.manage-post-card-item h3{
+    color: #FFF;
+font-family: Jomolhari;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 0 7px;
+}
+.manage-post-card-item p{
+    word-wrap: break-word;
+    color: #FFF;
+font-family: Jomolhari;
+font-size: 12px;
+font-weight: 400;
+width: 253px;
+padding: 0 7px;
+}
+.manage-post-card-item img{
+    width: 100%;
+    height: 172px;
+    object-fit: cover;
+}
+.card__button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 0 15px;
+    margin-top: 10px;
+padding: 0 7px;
+padding-bottom: 7px;
+}
+.card__button-wrapper button{
+    padding: 10px 0;
+    width: 50%;
+    border: none;
+}
+.card__button-wrapper button:first-child{
+    background-color: gold;
+    color: #fff;
+}
+.card__button-wrapper button:last-child{
+    background-color: red;
+    color: #fff;
 }

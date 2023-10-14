@@ -2,7 +2,7 @@ const currentPage = new URLSearchParams(location.search).get("page")
 const $sidebarMenuItems = document.querySelectorAll(".sidebar__menu a")
 const mainContents = document.querySelectorAll("main > div")
 // let userId = JSON.parse(atob(localStorage.getItem("user_token").split(".")[1])).id
-const $allContent = document.getElementById("all-content")
+const $managePosts = document.getElementById("manage-posts")
 const $modelDeleteWrapper = document.querySelector(".modal-delete-wrapper")
 const $modelDelete = document.querySelector(".modal-delete")
 const $modalDeleteClose = document.getElementById("modal-delete-close")
@@ -60,6 +60,35 @@ var requestOptions = {
 
 fetch("http://localhost:3000/api/posts", requestOptions)
   .then(response => response.json())
-  .then(result => console.log(result))
+  .then(result => {
+    console.log(result);
+  })
   .catch(error => console.log('error', error));
 })
+
+
+axios.get("http://localhost:3000/api/posts")
+.then(data => {
+    renderNewPosts(data)
+})
+function renderNewPosts(result){
+    console.log(result);
+    const managePostFragment =document.createDocumentFragment()
+    $managePosts.innerHTML = ""
+        result.data.data.map(result =>{
+        // console.log(result);
+        const $managePosts = document.createElement("div")
+        $managePosts.className = "manage-post-card-item"
+        $managePosts.innerHTML = `
+        <img src="${result.image}" alt="${result.description}""/>
+        <h3>${result.title.split(" ").length > 10 ? result.title.slice(0, 30) : result.title}</h3>
+        <p>${result.description.split("").length > 10 ? result.description.slice(0, 50) : result.description}</p>
+        <div class="card__button-wrapper">
+        <button id="card__edit">Edit</button>
+        <button id="card__delete" data-realestate-id="${result._id}">Delete</button>
+        </div>
+        `
+        managePostFragment.appendChild($managePosts)
+})
+$managePosts.appendChild(managePostFragment)
+}
