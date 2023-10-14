@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jomolhari&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000000;
+}
+.dashboard-wrapper{
+    display: flex;
+}
+aside{
+    max-width: 270px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 31px;
+    background: #F5C147;
+    padding: 20px;
+    position: relative;
+}
+main{
+    min-height: 100vh;
+    flex: 1;
+    /* background-color: rebeccapurple; */
+}
+aside h1{
+    text-align: center;
+    color: #000;
+    font-family: Jomolhari;
+    font-size: 30px;
+    font-weight: 400;
+}
+.sidebar__profile{
+    border-radius: 22px;
+    background: #FFF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 30px 0;
+}
+.sidebar__profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #fff;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+}
+.profile__info strong{
+    color: #000;
+font-family: Jomolhari;
+font-size: 16px;
+font-weight: 400;
+}
+.profile__info small{
+    color: #787878;
+font-family: Jomolhari;
+font-size: 12px;
+font-weight: 400;
+}
+.sidebar__menu{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.sidebar__menu .menu__item{
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+}
+.sidebar__menu .menu__item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 16px 20px;
+    color: #FFF;
+    font-family: Jomolhari;
+    font-weight: 400;
+}
+.sidebar__menu .menu__item:hover{
+    background-color: #fff;
+}
+.sidebar__menu .menu__item:hover a{
+    color: #000;
+}
+.sidebar__signout{
+    background: #F5C147;
+    color: #fff;
+    border: none;
+    width: 100%;
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #000;
+    font-family: Jomolhari;
+    font-weight: 400;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+}
+.sidebar__signout:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.create-content, .manage-posts{
+    display: none;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding: 40px;
+    color: #FFF;
+font-family: Jomolhari;
+font-size: 25px;
+font-weight: 400;
+}
+main h2{
+    border-bottom: 2px solid grey;
+}
+.menu__item a[aria-current="page"]{
+    background-color: #fff;
+    color: #000;
+}

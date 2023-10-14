@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/sign-up.css">
 </head>
 <body>
-    <h1>Welcome</h1>
+    <form id="signup-form">
+        <img src="../images/logo.svg" alt="">
+        <h2>Log In</h2>
+        <input type="email" id="email" placeholder="Email" autocomplete="off">
+        <p id="check-email" style="display: none;"></p>
+        <div class="kozli-div">
+            <input type="password" id="password" placeholder="Password" autocomplete="off">
+            <button type="button" id="visibility-btn" class="fas fa-eye"></button>
+        </div>
+            <p id="check-password" style="display: none;"></p>
+        <p>Don’t you have an account? <a href="../pages/sign-up.html">Sign Up.</a></p>
+        <div>
+            <button type="submit" id="sign-up">Login</button>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../script/login.js"></script>
 </body>
 </html>

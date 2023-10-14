@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside>
+            <h1>Dashboard</h1>
+            <div class="sidebar__profile">
+                <img src="../images/photo_2021-02-23_08-17-07.jpg" alt="">
+                <div class="profile__info">
+                    <strong>Hilola Fayoziddinova</strong>
+                    <small>User</small>
+                </div>
+            </div>
+            <ul class="sidebar__menu">
+                <li class="menu__item"><a href="./dashboard.html?page=create">Create Post</a></li>
+                <li class="menu__item"><a href="./dashboard.html?page=manage">Manage Posts</a></li>
+            </ul>
+            <button class="sidebar__signout">Sign Out?</button>
+        </aside>
+        <main>
+            <div data-content-name="create" id="create-content" class="create-content">
+                <h2>Create New Post</h2>
+            </div>
+            <div data-content-name="manage"  class="manage-posts">
+                <h2>Manage Posts</h2>
+                <div id="manage-posts" class="manage-posts-grid"></div>
+                <!-- <div class="modal-delete-wrapper">
+                    <div class="modal-delete">
+                    <button id="modal-delete-close" class="fas fa-times"></button>
+                    <p>Are you sure to delete this Real Estate?</p>
+                    <button class="model-delete-btn">Delete</button>
+                </div>
+                </div> -->
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../script/dashboard.js"></script>
+</body>
+</html>
