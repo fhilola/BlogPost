@@ -4,6 +4,7 @@ const password = document.getElementById("password")
 const visibilityBtn = document.getElementById("visibility-btn")
 const checkEmail = document.getElementById("check-email")
 const checkPassword = document.getElementById("check-password")
+const $button = document.getElementById("sign-up")
 const EMAIL_REGEX = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
 const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_])[A-Za-z\d@$!%*#?&_]{8,}$/
 visibilityBtn.addEventListener("click", (e)=> {
@@ -61,6 +62,7 @@ signupForm.addEventListener("submit", (e)=>{
 .then(response => {
     if(response.status === 200){
         location.replace(location.origin + '/pages/dashboard.html')
+        $button.removeAttribute("disabled")
     }
 })
 
