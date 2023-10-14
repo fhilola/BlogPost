@@ -136,10 +136,49 @@ const editPostTitle = document.getElementById("post-title")
 const editPostSelect = document.getElementById("select")
 const editPostImage = document.getElementById("post-image")
 const editPostDescription = document.getElementById("post-description")
+const editPostButton = document.getElementById("post-creator")
+const editPostClose = document.getElementById("modal-edit-close")
 
 $managePosts.addEventListener("click", (e)=>{
     if(e.target.closest("#card__edit")){
         editPostFormWrapper.classList.add("edit-form-wrapper-active")
         editPostForm.classList.add("edit-form-active")
     }
+})
+editPostButton.addEventListener("click", (e)=>{
+    var myHeaders = new Headers();
+myHeaders.append("Authorization", `Bearer ${token}` );
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "title": `${editPostTitle.value.trim()}`,
+  "image": `${editPostImage.value.trim()}`,
+  "description": `${editPostDescription.value.trim()}`,
+  "category": "6526f77176a2fd43a5834131"
+});
+
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:3000/api/posts", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    console.log(result);
+  })
+  .catch(error => console.log('error', error));
+
+  axios.get("http://localhost:3000/api/posts")
+.then(data => {
+    renderNewPosts(data)
+})
+})
+
+editPostClose.addEventListener("click", ()=>{
+    console.log("hello");
+    editPostFormWrapper.classList.remove("edit-form-wrapper-active")
+    editPostForm.classList.remove("edit-form-active")
 })

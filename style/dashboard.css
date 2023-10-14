@@ -334,6 +334,7 @@ padding-bottom: 7px;
 }
 .model-delete-btn{
     color: #fff;
+    opacity: 0;
     border: none;
     margin-top: 20px;
     display: flex;
@@ -356,7 +357,7 @@ padding-bottom: 7px;
     top: 0;
     left: 0;
     background-color: #000000c8;
-    transition: .3s;
+    /* transition: .3s; */
     visibility: hidden;
 }
 #edit-form{
@@ -371,7 +372,10 @@ padding-bottom: 7px;
     padding: 35px 60px;
     max-width: 672px;
     width: 100%;
+    height: 100%;
     gap: 33px 0;
+    /* transition: .3s; */
+    /* opacity: 0; */
     /* visibility: hidden; */
 }
 #edit-form label{
@@ -396,6 +400,20 @@ border: none;
 outline: none;
 text-indent: 10px;
 }
+#edit-form button:last-child{
+    display: inline-flex;
+padding: 16px 73px 16px 72px;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+background: #000;
+color: #F5C147;
+font-family: Jomolhari;
+font-size: 20px;
+font-weight: 400;
+display: block;
+margin: 0 auto;
+}
 #modal-edit-close{
     /* position: absolute; */
     position: absolute;
@@ -411,8 +429,12 @@ text-indent: 10px;
     cursor: pointer;
 }
 .edit-form-wrapper-active{
+    /* opacity: 1; */
     visibility: visible;
 }
 .edit-form-active{
+    opacity: 1;
+    max-width: 672px;
+    height: 100%;
     visibility: visible;
 }
